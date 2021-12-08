@@ -1,0 +1,127 @@
+$background: #e2fdff;
+$main-background: #303c6c;
+$header: #fbe8a6;
+$grid: #d2fdff;
+$grid-border: #f4676c;
+$buttons: #b4dfe5;
+$player-header: #f4676c;
+
+$text1: #fbf8d6;
+$text2: #c4373c;
+$text3: #000033;
+
+$border: #000033;
+
+html{
+    height: 100%;
+    width: 100%;
+    background-color: $background;
+    font-family: "Architects Daughter", cursive;
+    color: $text1;
+}
+button{
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+}
+button:focus{
+    outline: none;
+}
+.option-button{
+    margin: 0px 10px;
+    padding: 5px 10px;
+    font-family: inherit;
+    background-color: $buttons;
+    font-size: 18px;
+    font-weight: bold;
+    color: $text2;
+    transition: all 0.3s ease;
+}
+.option-button:hover{
+    padding: 5px 30px;
+}
+body{
+    position: block;
+    width: 100%;
+    height: 100%;
+    min-width: 550px;
+    min-height: 750px;
+    margin: 0;
+}
+#root{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 700px;
+    width: 500px;
+    border: solid 5px $border;
+    background-color: $main-background;
+}
+header{
+    background-color: $header;
+    border-bottom: 5px solid $border;
+    color: $text3;
+
+    h1{
+        margin: 0;
+        text-align: center;
+        font-size: 64px;
+    }
+}
+#welcome-screen{
+    margin-top: 150px;
+    text-align: center;
+
+    h2{
+        font-size: 28px;
+    }
+}
+#player-header{
+    text-align: center;
+
+    h3{
+        font-size: 24px;
+        margin: 12px;
+    }
+    h2{
+        font-size: 36px;
+        margin: 0 45px -10px 45px;
+        padding: 5px 0 15px 0;
+        background-color: $player-header;
+        color: $text3 !important;
+    }
+}
+#grid{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-left: auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    padding: 5px;
+    text-align: center;
+    background-color: $grid-border;
+
+    * {
+        width: 130px;
+        height: 130px;
+        background-color: $grid;
+    }
+    .grid-back-image{
+        opacity: 0;
+    }
+    .grid-button:hover .grid-back-image{
+        opacity: 20%;
+    }
+}
+#button-area{
+    position: absolute;
+    bottom: 25px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
