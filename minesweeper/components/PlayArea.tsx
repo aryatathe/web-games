@@ -42,7 +42,6 @@ const PlayArea = (): JSX.Element => {
                   keyVal={`${state.row}${state.col}${i}${j}${state.mines}`}
                   onContextMenu={(event: React.MouseEvent) => {
                     event.preventDefault();
-                    console.log("right-clicked");
                     if (state.flags === 0 && state.viewGrid[i][j] === 0) return;
                     let temp: number[][] = state.viewGrid;
                     temp[i][j] = temp[i][j] === 0 ? 2 : 0;
@@ -58,7 +57,6 @@ const PlayArea = (): JSX.Element => {
                   }}
                   onClick={(): void => {
                     if (state.mineGrid[i][j] < 0) {
-                      console.log("lose");
                       let temp: number[][] = lossReveal(
                         state.mineGrid,
                         state.viewGrid,
