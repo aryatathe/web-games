@@ -36,6 +36,5 @@ export const clicked = (
   col: number
 ): [number[][], number] => {
   let count: number = recurse(mineGrid, viewGrid, x, y, row, col, 0);
-  console.log(count);
   return [viewGrid, count];
 };
